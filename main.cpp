@@ -101,8 +101,8 @@ int saveToFile(const std::vector<Transaction> &transactions) {
     for (int i{}; i < transactions.size(); i++) {
         inserting << transactions[i].vehicle_no << ","
                   << transactions[i].fuel_type << ","
-                  << transactions[i].litre_dispensed << transactions[i].category
-                  << "\n";
+                  << transactions[i].litre_dispensed << ","
+                  << transactions[i].category << "\n";
     }
     return 0;
 }
