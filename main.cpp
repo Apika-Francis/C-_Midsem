@@ -32,7 +32,6 @@ struct Transaction {
 //   20 to 49   → Regular Fill
 //   50+        → Large Fill
 void recordT(std::vector<Transaction> &transactions) {
-
     Transaction t{};
     std::cout << "Vehicle Number: ";
     std::getline(std::cin, t.vehicle_no);
@@ -58,7 +57,6 @@ void recordT(std::vector<Transaction> &transactions) {
 // Displays total transactions, total litres dispensed, and average litres per
 // transaction.
 void summary(const std::vector<Transaction> &transactions) {
-
     int numOfTransactions{static_cast<int>(transactions.size())};
     int totalLitres{};
     double averageLitres{};
@@ -92,7 +90,6 @@ void displayAll(const std::vector<Transaction> &transactions) {
 // Saves all transactions to fileDb.txt in CSV format, overwriting any existing
 // data.
 int saveToFile(const std::vector<Transaction> &transactions) {
-
     std::ofstream inserting{"fileDb.txt", std::ios::app};
     if (!inserting) {
         std::cerr << "Couldn't connnect to the database\n";
@@ -109,7 +106,6 @@ int saveToFile(const std::vector<Transaction> &transactions) {
 
 // Reads and prints all transaction records from fileDb.txt.
 int readFromFile() {
-
     std::string out{};
     std::ifstream outputing{"fileDb.txt"};
 
@@ -126,7 +122,6 @@ int readFromFile() {
 
 // Finds and displays only transactions categorised as Large Fill (50+ litres).
 void findALFT(const std::vector<Transaction> &transactions) {
-
     for (int i{}; i < transactions.size(); i++) {
         if (transactions[i].category == "Large Fill") {
             std::string_view v = transactions[i].vehicle_no;
